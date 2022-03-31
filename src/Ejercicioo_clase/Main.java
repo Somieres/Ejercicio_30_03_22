@@ -1,5 +1,6 @@
 package Ejercicioo_clase;
 
+import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -9,20 +10,51 @@ public class Main {
     public static void main(String[] args) {
 
         List<Integer> num1 = new ArrayList<>();
-
-        num1.add(12);
-        num1.add(23);
-        num1.add(35);
-        num1.add(40);
-        num1.add(59);
-        num1.add(69);
-        num1.add(5);
-
+        List<Integer> num2= new ArrayList<>();
+        num1.add(1);
+        num1.add(2);
+        num1.add(3);
+        num2.add(4);
+        num2.add(5);
+        num2.add(6);
 
 
+
+        // Metodo para obtener un elemento del arrayList indicando el indice del que
+        // queremos conocer el valor en dicha posicion
+        num2.get(0);
+        System.out.println(num2);
+        //guardar elem en la posición que indica
+        //indice y devuelve el valor que había en dicha posición
+        num1.set(2, -3);
+        System.out.println(num1);
+
+
+        //observamos como ha cambiado el valor de la posicion nº 4
+        // al utilizar la funcion get(int indice, E element)
+        System.out.println(num1.get(2));
+
+        // void.add- guarda elementos en la posición que indica indice sin machacar
+        // el valor previo, es decir le agrega una posicion al arrayList con el numero introducido en el indice dado.
+        // Por lo que el array de num1 pasaria a tener 4 posisiones y en la posision 0 estaria el 21 y sucesivamente, el resto
+        // de los numeros introducidos
+
+
+        num1.add(0,21);
+        System.out.println(num1);
+
+        // addAll sirve para unir dos arrays del mismo tipo, por lo que no es necesario crear una nueva con
+        // posiciones extras.
+       // num1.addAll(num2);
+       // System.out.println(num1);
+/**
+ * Sirve para eliminar una posision en concreto del arrayList
+ */
+        num2.remove(0);
+        System.out.println(num2);
+        num2.remove(new Integer(5));
 
     }
-
 
 
 }
@@ -70,7 +102,7 @@ public class Main {
      //    }
      //   System.out.println(listaCliente);*/
 
-       /* ListIterator listIterator=listaCliente.listIterator(listaCliente.size());*/
+/* ListIterator listIterator=listaCliente.listIterator(listaCliente.size());*/
 
 
 

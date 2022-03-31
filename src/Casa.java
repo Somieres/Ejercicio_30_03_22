@@ -1,23 +1,8 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Casa {
-
-    public static void main(String[] args) {
-
-        List <Casa> chalets=new ArrayList<>();
-
-        chalets.add(new Casa("Eva Ramos", "El Peral n 2"));
-        chalets.add(new Casa("Jessica Ramos", "El Peral n 3"));
-        chalets.add(new Casa("Jesus Miguel Ramos", "El Peral n 1"));
-        chalets.add(new Casa("Rosario Leon", "El Peral n 2"));
-
-        System.out.println(chalets);
-
-
-
-
-    }
 
     private int metrosCuadrados;
     private int numeHab;
@@ -52,6 +37,21 @@ public class Casa {
     }
 
     @Override
+    public boolean equals(Object o) {
+        boolean igual=false;
+        if (this == o){
+            igual=true;
+        }
+        Casa casa = (Casa) o;
+        if(owner.equals(casa.owner)){
+            igual=true;
+        }
+            return igual;
+    }
+
+
+
+    @Override
     public String toString() {
         return "El chalete " +
                 " tiene " + metrosCuadrados +
@@ -60,5 +60,19 @@ public class Casa {
                 ", nombreCalle " + nombreCalle +
                 " y su precio es de " + precio+System.lineSeparator();
     }
+    public static void main(String[] args) {
 
+        List <Casa> chalets=new ArrayList<>();
+
+        chalets.add(new Casa("Eva Ramos", "El Peral n 2"));
+        chalets.add(new Casa("Jessica Ramos", "El Peral n 3"));
+        chalets.add(new Casa("Jesus Miguel Ramos", "El Peral n 1"));
+        chalets.add(new Casa("Rosario Leon", "El Peral n 2"));
+
+        System.out.println(chalets);
+
+
+
+
+    }
 }
