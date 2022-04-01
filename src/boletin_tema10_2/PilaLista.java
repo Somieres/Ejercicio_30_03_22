@@ -21,7 +21,7 @@ public class PilaLista implements Pila{
     @Override
     public boolean siPilaVacia(){
 
-        return (indiceCima==VACIA);
+       return pilaLista.isEmpty();
     }
 
     @Override
@@ -41,6 +41,8 @@ public class PilaLista implements Pila{
         indiceCima--;
         return valor;
     }
+
+
     @Override
     public Integer devolverValorCima(){
 
@@ -56,11 +58,11 @@ public class PilaLista implements Pila{
 
     @Override
     public String toString() {
-        return pilaLista.toString();
+        return "Los numeros son: "+ pilaLista;
     }
-
     @Override
-    public int devolverElementos(){
+
+    public int devolverElemento(){
 
         return indiceCima+1;
     }

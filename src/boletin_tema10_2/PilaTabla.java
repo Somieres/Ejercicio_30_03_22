@@ -4,10 +4,14 @@ import java.util.Arrays;
 
 public class PilaTabla implements Pila{
 
-    private static Integer [] pilaTabla;
-    private static int indiceCima;
+    private  Integer [] pilaTabla;
+    private  int indiceCima;
     static final int VACIA= -1;
 
+    /**
+     * Creamos un constructor
+     * @param num
+     */
     public PilaTabla(int num) {
 
         pilaTabla=new Integer[num];
@@ -26,7 +30,8 @@ public class PilaTabla implements Pila{
 
     public boolean siPilaLlena(){
         boolean llena=false;
-        if (indiceCima>=pilaTabla.length+1){
+
+        if ((indiceCima+1)==pilaTabla.length){
             llena=true;
         }
         return llena;
@@ -41,18 +46,13 @@ public class PilaTabla implements Pila{
     public void apilar(int num){
 
 
-        if (!siPilaLlena()){
+        if (siPilaLlena()){
             pilaTabla= Arrays.copyOf(pilaTabla,pilaTabla.length+10);
         }
             indiceCima++;
             pilaTabla[indiceCima]=num;
-
-
-
-
-
-
     }
+
 //Desapilar un elemento del primer lugar de la tabla.
 // Si está vacía la pila, devuelve null
 
@@ -87,14 +87,20 @@ public class PilaTabla implements Pila{
         return valor;
     }
 
-            @Override
+
+    /**
+     *
+     * @return
+     */
+    @Override
     public String toString() {
-          return  Arrays.toString(pilaTabla);
+        return "El array de Integer es: " + Arrays.toString(pilaTabla);
     }
+
 
     @Override
-    public int devolverElementos(){
-
+    public int devolverElemento() {
         return indiceCima+1;
     }
+
 }
